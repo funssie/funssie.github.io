@@ -93,7 +93,65 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h1><h2 id="下载nodejs"><a href="#下载nodejs" class="headerlink" title="下载nodejs"></a>下载nodejs</h2><ul>
+<li>下载安装 ： <a target="_blank" rel="noopener" href="http://nodejs.cn/download/">http://nodejs.cn/download/</a></li>
+<li>下载完有两个组件 npm(包管理器)和nodejs</li>
+</ul>
+<hr>
+<h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><ul>
+<li>管理员权限下：sudo su</li>
+<li>查看node&#x2F;nmp版本：node -v &#x2F; npm -v</li>
+<li>安装淘宝的cnpm 管理器:npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a>	(最后没有用cnmp)</li>
+</ul>
+<h5 id="注意：nodejs选择14-xx版本，16XXX版本太高"><a href="#注意：nodejs选择14-xx版本，16XXX版本太高" class="headerlink" title="注意：nodejs选择14.xx版本，16XXX版本太高"></a>注意：nodejs选择14.xx版本，16XXX版本太高</h5><ul>
+<li>查看cnpm版本：cnpm -v	</li>
+<li>安装hexo框架：cnpm install -g hexo-cli<br>npm install hexo-cli -g</li>
+<li>hexo -v	#查看hexo版本</li>
+<li>mkdir blog	#创建blog目录</li>
+<li>cd blog	 #进入blog目录</li>
+<li>sudo hexo init	#生成博客 初始化博客</li>
+<li>sudo hexo s	#启动本地博客服务</li>
+<li><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>	#本地访问地址</li>
+<li>hexo n “我的第一篇文章” #创建新的文章</li>
+</ul>
+<h4 id="Created-x2F-Users-x2F-dun-x2F-blog-x2F-source-x2F-posts-x2F-我的第一篇文章-md"><a href="#Created-x2F-Users-x2F-dun-x2F-blog-x2F-source-x2F-posts-x2F-我的第一篇文章-md" class="headerlink" title="Created: &#x2F;Users&#x2F;dun&#x2F;blog&#x2F;source&#x2F;_posts&#x2F;我的第一篇文章.md"></a>Created: &#x2F;Users&#x2F;dun&#x2F;blog&#x2F;source&#x2F;_posts&#x2F;我的第一篇文章.md</h4><ul>
+<li>#返回blog目录</li>
+<li>hexo clean #清理</li>
+<li>hexo g #生成</li>
+</ul>
+<hr>
+<h2 id="配置到github"><a href="#配置到github" class="headerlink" title="配置到github"></a>配置到github</h2><ul>
+<li>#Github创建一个新的仓库 YourGithubName.github.io</li>
+<li>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件</li>
+</ul>
+<hr>
+<p>#配置_config.yml </p>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a target="_blank" rel="noopener" href="https://hexo.io/docs/deployment.html">https://hexo.io/docs/deployment.html</a></h2><h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy:"></a>deploy:</h2><pre><code>  type: git
+ repo: https://github.com/YourGithubName/YourGithubName.github.io.git
+
+  branch: master
+</code></pre>
+<ul>
+<li>hexo d #部署到Github仓库里</li>
+<li>注意： 连接不上是网太慢了，成功会让输入git账号和密码</li>
+<li><a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a>  #访问这个地址可以查看博客</li>
+</ul>
+<hr>
+<h2 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h2><ul>
+<li><p>git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes&#x2F;yilia  #下载yilia主题到本地</p>
+</li>
+<li><p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+</li>
+<li><p>hexo clean	#清理一下</p>
+</li>
+<li><p>hexo generate	#生成</p>
+</li>
+<li><p>hexo deploy	#部署到远程Github仓库</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a>  #查看博客</p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
